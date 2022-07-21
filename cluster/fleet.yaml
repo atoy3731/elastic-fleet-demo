@@ -19,6 +19,13 @@ targetCustomizations:
       count: 1
       persistence: 
         size: 5Gi
+      resources:
+        limits:
+          cpu: 2
+          memory: "2Gi"
+        requests:
+          cpu: 500m
+          memory: "500Mi"
 - name: prod
   clusterSelector:
     matchLabels:
@@ -28,3 +35,10 @@ targetCustomizations:
       count: 3
       persistence:
         size: 25Gi
+      resources:
+        limits:
+          cpu: 2
+          memory: "2Gi"
+        requests:
+          cpu: 1
+          memory: "1Gi"
