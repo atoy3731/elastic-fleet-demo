@@ -4,7 +4,7 @@ metadata:
   name: elastic-cluster
   namespace: fleet-default
 spec:
-  repo: ssh://ggit@github.com:atoy3731/elastic-fleet-demo.git
+  repo: https://github.com/atoy3731/elastic-fleet-demo.git
   targets:
   - clusterGroup: elastic
   paths:
