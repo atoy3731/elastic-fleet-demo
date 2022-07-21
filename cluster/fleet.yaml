@@ -42,3 +42,16 @@ targetCustomizations:
         requests:
           cpu: 1
           memory: "1Gi"
+
+diff:
+  comparePatches:
+  - apiVersion: elasticsearch.k8s.elastic.co/v1
+    kind: Elasticsearch
+    name: elastic-cluster-cluster
+    operations:
+    - {"op": "remove", "path":"/spec/nodeSets"}
+  - apiVersion: admissionregistration.k8s.io/v1
+    kind: ValidatingWebhookConfiguration
+    name: elastic-operator.eck-operator.k8s.elastic.co
+    operations:
+    - {"op": "remove", "path":"/webhooks"}
