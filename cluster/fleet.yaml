@@ -1,0 +1,30 @@
+defaultNamespace: es-tenant
+
+helm:
+  chart: ./chart
+  valuesFiles:
+  - values.yaml
+    
+dependsOn:
+- name: eck-operator-operator
+dependsOn: elastic-cluster-namespaces-cluster
+
+targetCustomizations:
+- name: dev
+  clusterSelector:
+    matchLabels:
+      type: dev
+  helm:
+    values:
+      count: 1
+      persistence: 
+        size: 5Gi
+- name: prod
+  clusterSelector:
+    matchLabels:
+      type: prod
+  helm:
+    values:
+      count: 3
+      persistence:
+        size: 25Gi

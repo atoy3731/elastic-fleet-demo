@@ -1,0 +1,12 @@
+kind: GitRepo
+apiVersion: fleet.cattle.io/v1alpha1
+metadata:
+  name: elastic-cluster
+  namespace: fleet-default
+spec:
+  repo: ssh://ggit@github.com:atoy3731/elastic-fleet-demo.git
+  targets:
+  - clusterGroup: elastic
+  paths:
+  - "./namespaces/cluster"
+  - "./cluster"

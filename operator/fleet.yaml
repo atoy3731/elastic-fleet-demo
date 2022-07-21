@@ -1,0 +1,9 @@
+defaultNamespace: eck-operator
+helm:
+  repo: https://helm.elastic.co
+  chart: eck-operator
+  version: 1.8.0
+  releaseName: eck-operator
+
+dependsOn: 
+- name: eck-operator-namespaces-operator
