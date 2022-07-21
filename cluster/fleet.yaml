@@ -7,7 +7,7 @@ helm:
     
 dependsOn:
 - name: eck-operator-operator
-dependsOn: elastic-cluster-namespaces-cluster
+- name: elastic-cluster-namespaces-cluster
 
 targetCustomizations:
 - name: dev
