@@ -13,7 +13,7 @@ targetCustomizations:
 - name: dev
   clusterSelector:
     matchLabels:
-      type: dev
+      env: dev
   helm:
     values:
       count: 1
@@ -22,7 +22,7 @@ targetCustomizations:
 - name: prod
   clusterSelector:
     matchLabels:
-      type: prod
+      env: prod
   helm:
     values:
       count: 3
