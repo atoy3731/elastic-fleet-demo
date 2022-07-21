@@ -6,7 +6,9 @@ metadata:
 spec:
   repo: https://github.com/atoy3731/elastic-fleet-demo.git
   targets:
-  - clusterGroup: elastic
+  - clusterSelector:
+      matchLabels:
+        elastic: enabled
   paths:
   - "./namespaces/cluster"
   - "./cluster"

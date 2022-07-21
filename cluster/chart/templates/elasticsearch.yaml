@@ -11,11 +11,6 @@ spec:
       selfSignedCertificate:
         disabled: true
 
-  {{- if .Values.backup.enabled }}
-  secureSettings:
-  - secretName: minio-creds-secret
-  {{- end }}
-
   nodeSets:
   - name: master
     count: {{ .Values.count }}
