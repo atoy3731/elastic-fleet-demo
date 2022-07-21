@@ -48,6 +48,7 @@ diff:
   - apiVersion: elasticsearch.k8s.elastic.co/v1
     kind: Elasticsearch
     name: elastic-cluster-cluster
+    namespace: es-tenant
     operations:
     - {"op": "remove", "path":"/spec/nodeSets"}
   - apiVersion: admissionregistration.k8s.io/v1
